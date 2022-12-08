@@ -15,4 +15,4 @@ See https://render.com/docs/deploy-node-express-app or follow the steps below:
   * Build Command: `yarn` (if you haven't yet installed yarn: https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
   * Start Command: `node app.js`
 
-The tool will be immediately live @ Port 3001, and at the[https://trend-study-tool.onrender.com](https://trend-study-tool.onrender.com) URL as soon as the build finishes. (This takes a while)
+The tool will be immediately live @ Port 3001, and at the[https://trend-study-tool.onrender.com](https://trend-study-tool.onrender.com) URL as soon as the build finishes. (It should update after each new commit, but this can take a while.)

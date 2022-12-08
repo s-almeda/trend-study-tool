@@ -1,15 +1,18 @@
 # README
 
-This is the [Express](https://expressjs.com) [Hello world](https://expressjs.com/en/starter/hello-world.html) example on [Render](https://render.com).
+This is our simulated social-media system, for use as a tool in user study measuring how visual trends can impact users. 
 
-The app in this repo is deployed at [https://express.onrender.com](https://express.onrender.com).
+Built using:
+[Express](https://expressjs.com) and [Render](https://render.com).
+
+This app is deployed at [https://trend-study-tool.onrender.com](https://trend-study-tool.onrender.com).
 
 ## Deployment
 
 See https://render.com/docs/deploy-node-express-app or follow the steps below:
 
-Create a new web service with the following values:
-  * Build Command: `yarn`
+
+  * Build Command: `yarn` (if you haven't yet installed yarn: https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
   * Start Command: `node app.js`
 
-That's it! Your web service will be live on your Render URL as soon as the build finishes.
+The tool will be immediately live @ Port 3001, and at the[https://trend-study-tool.onrender.com](https://trend-study-tool.onrender.com) URL as soon as the build finishes. (This takes a while)

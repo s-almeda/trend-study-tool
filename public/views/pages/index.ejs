@@ -1,102 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <%- include('../partials/head'); %>
-</head>
-<body class="container">
-
-<header>
-  <%- include('../partials/header'); %>
-</header>
-
-<main>
-  <div class="jumbotron">
-    <h1>Welcome to our website!</h1>
-  </div>
-  <div id="Section1">
-    <h2>Section 1</h2>
-    <p class="main-content">
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-      It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-      It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
-      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
-    </p>
-    <p>
-      <a href="#"  class="btn btn-dark">Back to the top</a>.
-    </p>
-  </div>
-
-
-
-  <div id="calculator">
-    <div id="container">
-      <h1>Tip Calculator</h1>
-      <h6>Included here as a placeholder, from <a href="https://codepen.io/cphemm/pen/reNwWd">Carolyn Hemmings</a></h6>
-      <div id="calculator">
-
-        <form>
-          <p>How much was your bill?
-            <p>
-              $ <input id="billamt" type="text" placeholder="Bill Amount">
-
-              <p>How was your service?
-                <p>
-                  <select id="serviceQual">
-                <option disabled selected value="0">-- Choose an Option --</option>
-                <option value="0.3">30&#37; &#45; Outstanding</option>
-                <option value="0.2">20&#37; &#45; Good</option>
-                <option value="0.15">15&#37; &#45; It was OK</option>
-                <option value="0.1">10&#37; &#45; Bad</option>
-                <option value="0.05">5&#37; &#45; Terrible</option>
-            </select>
-
-        </form>
-        <p>How many people are sharing the bill?</p>
-        <input id="peopleamt" type="text" placeholder="Number of People"> people
-        <button type="button" id="calculate"  class="btn btn-success">Calculate!</button>
-
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="container">
+    <main>
+      <div class="post mx-auto">
+        <div class="post-users">
+          <div class="post-username">tim</div>
+          <div class="post-source"></div>
+        </div>
+        <div class="post-image">
+          <img
+            src="https://images.pexels.com/photos/14256737/pexels-photo-14256737.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          />
+        </div>
+        <div class="post-metadata">
+          <div class="post-time">4 minutes ago</div>
+          <div class="post-like">
+            <div class="post-like-btn">
+              <?xml version="1.0" ?><svg
+                height="48"
+                viewBox="0 0 48 48"
+                width="48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h48v48h-48z" fill="none" />
+                <path
+                  d="M33 6c-3.48 0-6.82 1.62-9 4.17-2.18-2.55-5.52-4.17-9-4.17-6.17 0-11 4.83-11 11 0 7.55 6.8 13.72 17.1 23.07l2.9 2.63 2.9-2.63c10.3-9.35 17.1-15.52 17.1-23.07 0-6.17-4.83-11-11-11zm-8.79 31.11l-.21.19-.21-.19c-9.51-8.63-15.79-14.33-15.79-20.11 0-3.99 3.01-7 7-7 3.08 0 6.08 1.99 7.13 4.72h3.73c1.06-2.73 4.06-4.72 7.14-4.72 3.99 0 7 3.01 7 7 0 5.78-6.28 11.48-15.79 20.11z"
+                />
+              </svg>
+            </div>
+            <div class="post-like-count">3.2k</div>
+          </div>
+          <div class="post-reshare">
+            <div class="post-reshare-btn">
+              <?xml version="1.0" ?><svg
+                height="48"
+                viewBox="0 0 48 48"
+                width="48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h48v48H0z" fill="none" />
+                <path
+                  d="M24 10V2L14 12l10 10v-8c6.63 0 12 5.37 12 12s-5.37 12-12 12-12-5.37-12-12H8c0 8.84 7.16 16 16 16s16-7.16 16-16-7.16-16-16-16z"
+                />
+              </svg>
+            </div>
+            <div class="post-reshare-count">925</div>
+          </div>
+        </div>
       </div>
-      <!--calculator end-->
-      <div id="totalTip">
-        <sup>$</sup><span id="tip">0.00</span>
-        <small id="each">each</small>
+      <div class="post mx-auto">
+        <div class="post-users">
+          <div class="post-username">shm</div>
+          <div class="post-source"></div>
+        </div>
+        <div class="post-image">
+          <img
+            src="https://images.pexels.com/photos/14256397/pexels-photo-14256397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          />
+        </div>
+        <div class="post-metadata">
+          <div class="post-time">3 hours ago</div>
+          <div class="post-like">
+            <div class="post-like-btn">
+              <?xml version="1.0" ?><svg
+                height="48"
+                viewBox="0 0 48 48"
+                width="48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h48v48h-48z" fill="none" />
+                <path
+                  d="M33 6c-3.48 0-6.82 1.62-9 4.17-2.18-2.55-5.52-4.17-9-4.17-6.17 0-11 4.83-11 11 0 7.55 6.8 13.72 17.1 23.07l2.9 2.63 2.9-2.63c10.3-9.35 17.1-15.52 17.1-23.07 0-6.17-4.83-11-11-11zm-8.79 31.11l-.21.19-.21-.19c-9.51-8.63-15.79-14.33-15.79-20.11 0-3.99 3.01-7 7-7 3.08 0 6.08 1.99 7.13 4.72h3.73c1.06-2.73 4.06-4.72 7.14-4.72 3.99 0 7 3.01 7 7 0 5.78-6.28 11.48-15.79 20.11z"
+                />
+              </svg>
+            </div>
+            <div class="post-like-count">109</div>
+          </div>
+          <div class="post-reshare">
+            <div class="post-reshare-btn">
+              <?xml version="1.0" ?><svg
+                height="48"
+                viewBox="0 0 48 48"
+                width="48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h48v48H0z" fill="none" />
+                <path
+                  d="M24 10V2L14 12l10 10v-8c6.63 0 12 5.37 12 12s-5.37 12-12 12-12-5.37-12-12H8c0 8.84 7.16 16 16 16s16-7.16 16-16-7.16-16-16-16z"
+                />
+              </svg>
+            </div>
+            <div class="post-reshare-count">27</div>
+          </div>
+        </div>
       </div>
-      <!--totalTip end-->
-
-    </div>
-    <!--container end-->
-
-    <script type="text/javascript" src="tipcalculator.js"></script>
-
-    <p>
-      <a href="#"  class="btn btn-dark">Back to the top</a>.
-    </p>
-</div>
-
-  <div id="Section2">
-
-  <div class="jumbotron">
-    <h2>Did you know?</h2>
-    <h3>Rabbits are crepuscular.</h3>
-  </div>
-    <h2>Section 2</h2>
-    <p class="main-content">
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-      It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-      It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
-      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
-    </p>
-    <p>
-      <a href="#"  class="btn btn-dark">Back to the top</a>.
-    </p>
-  </div>
-
-</main>
-
-<footer>
-  <%- include('../partials/footer'); %>
-</footer>
-
-
-</body>
+    </main>
+    <footer><%- include('../partials/footer'); %></footer>
+  </body>
 </html>

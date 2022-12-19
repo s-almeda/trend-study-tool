@@ -15,6 +15,10 @@ main {
   background-color: white;
   border-left: #e4e4e4 1px solid;
   border-right: #e4e4e4 1px solid;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .post-username {
@@ -94,8 +98,31 @@ footer {
   text-align: end;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 1200px) {
   main {
-    width: 100vw;
+    max-width: 750px;
+    width: 90vw;
+  }
+
+  .container {
+    padding: 0 0 0 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  footer {
+    font-size: x-small;
+    position: relative;
+    padding: 4em;
+    bottom: 1em;
+    width: 80%;
+    text-align: center;
+    right: 0;
+  }
+
+  body {
+    font-size: large;
+    background-color: #fcfcfc;
+    font-family: 'Inter', sans-serif;
   }
 }

@@ -9,7 +9,7 @@ This app is deployed at [https://trend-study-tool.onrender.com](https://trend-st
   * Build Command: `yarn` (if you haven't yet installed yarn: https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
   * Start Command: `npm start`
 
-The tool will be immediately live @ Port 3001, and at the[https://trend-study-tool.onrender.com](https://trend-study-tool.onrender.com) URL as soon as the build finishes. (It should update after each new commit, but this can take a while. You may have to ask Shm to log-in and manually deploy the latest commit.)
+The tool will be immediately live @ [Port 3000](http://localhost:3000/), and at the[https://trend-study-tool.onrender.com](https://trend-study-tool.onrender.com) URL as soon as the build finishes. (It should update after each new commit, but this can take a while. You may have to ask Shm to log-in and manually deploy the latest commit.)
 
 ## Development 
 

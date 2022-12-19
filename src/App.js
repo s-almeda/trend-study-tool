@@ -1,10 +1,14 @@
 //import logo from './logo.svg';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './App.css';
 import Footer from "./components/footer/Footer";
 import Post from "./components/post/Post";
+import { db } from "./firebase/FirebaseInit"; //import Firebase database functionality
+import ImageUpload from "./components/imageUpload/ImageUpload";
+import { onValue, ref } from "firebase/database";
 
 function App() {
+  /* test out dynamically loaded posts like this...
   const [posts, setPosts] = useState([
     {
       username: "pradeep",
@@ -20,7 +24,33 @@ function App() {
       likes: 666, 
       reshares: 10,
     } 
-    ])
+    ]);
+  */
+  /*load in post data from database*/
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    db.collection("posts").onSnapshot((snapshot) => {
+      setPosts(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          post: doc.data(),
+        }))
+      );
+    });
+  }, []);
+
+/*
+    db.collection("posts").onSnapshot((snapshot) => {
+      setPosts(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          post: doc.data(),
+        }))
+      );
+    });
+  }, []);
+*/
   return (
     <div className="app">
       
@@ -82,8 +112,9 @@ function App() {
 
     {/* Timeline that we dynamically fill with posts... */}
       <div className="timeline">
+        {<ImageUpload user="placeholder123" />}
         {posts.map((post) => (
-          <Post
+          <Post 
             username={post.username}
             time={post.time}
             likes={post.likes}

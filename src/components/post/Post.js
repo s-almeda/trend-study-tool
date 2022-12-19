@@ -13,7 +13,7 @@ function Post({username, time, imageUrl, likes, reshares}) {
 
       {/* metadata */}
       <div class="post-metadata">
-        <div class="post-time">{time} ago</div>      
+        <div class="post-time">{time}</div>      
         {/*like button*/} 
         <div class="post-like">
               <div class="post-like-btn">

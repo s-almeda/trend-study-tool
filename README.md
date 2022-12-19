@@ -15,3 +15,11 @@ The tool will be immediately live @ [Port 3000](http://localhost:3000/), and at 
 
 * Edit the content of the main page via `src/App.js` and the style via `src/App.css`
 * Create and edit components in: `src/components/<name of component>` ex: `src/components/post/` contains `Post.js` and `Post.css` .
+
+
+### Credits
+
+Borrows liberally from the following tutorials:
+https://www.makeuseof.com/upload-files-to-firebase-using-reactjs/ 
+https://ordinarycoders.com/blog/article/instagram-clone-reactjs
+https://www.geeksforgeeks.org/how-to-push-data-into-firebase-realtime-database-using-reactjs/

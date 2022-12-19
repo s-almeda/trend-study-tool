@@ -1,21 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <%- include('../partials/head'); %>
-  </head>
-  <body class="container">
-    <main>
+//import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className="app">
+      
       <div class="user-data">
         <div class="user-data-text">
           <div class="my-username">timoteayang</div>
           <div class="my-metadata">
             <div class="my-likes">
-              <?xml version="1.0" ?><svg
+              <svg
                 height="48"
                 viewBox="0 0 48 48"
                 width="48"
                 xmlns="http://www.w3.org/2000/svg"
-              >
+                >
                 <path d="M0 0h48v48h-48z" fill="none" />
                 <path
                   d="M24 42.7l-2.9-2.63c-10.3-9.35-17.1-15.52-17.1-23.07 0-6.17 4.83-11 11-11 3.48 0 6.82 1.62 9 4.17 2.18-2.55 5.52-4.17 9-4.17 6.17 0 11 4.83 11 11 0 7.55-6.8 13.72-17.1 23.07l-2.9 2.63z"
@@ -24,7 +24,7 @@
               102 total likes
             </div>
             <div class="my-reshares">
-              <?xml version="1.0" ?><svg
+              <svg
                 height="48"
                 viewBox="0 0 48 48"
                 width="48"
@@ -40,7 +40,7 @@
           </div>
         </div>
         <label for="upload-post" class="create-btn">
-          <?xml version="1.0" ?><svg
+          <svg
             height="48"
             viewBox="0 0 48 48"
             width="48"
@@ -74,7 +74,7 @@
           <div class="post-time">4 minutes ago</div>
           <div class="post-like">
             <div class="post-like-btn">
-              <?xml version="1.0" ?><svg
+              <svg
                 height="48"
                 viewBox="0 0 48 48"
                 width="48"
@@ -89,7 +89,7 @@
           </div>
           <div class="post-reshare">
             <div class="post-reshare-btn">
-              <?xml version="1.0" ?><svg
+              <svg
                 height="48"
                 viewBox="0 0 48 48"
                 width="48"
@@ -118,7 +118,7 @@
           <div class="post-time">3 hours ago</div>
           <div class="post-like">
             <div class="post-like-btn">
-              <?xml version="1.0" ?><svg
+              <svg
                 height="48"
                 viewBox="0 0 48 48"
                 width="48"
@@ -133,7 +133,7 @@
           </div>
           <div class="post-reshare">
             <div class="post-reshare-btn">
-              <?xml version="1.0" ?><svg
+              <svg
                 height="48"
                 viewBox="0 0 48 48"
                 width="48"
@@ -149,7 +149,8 @@
           </div>
         </div>
       </div>
-      <footer><%- include('../partials/footer'); %></footer>
-    </main>
-  </body>
-</html>
+    </div>
+  );
+}
+
+export default App;

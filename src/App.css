@@ -9,7 +9,7 @@ body {
   font-weight: 400;
 }
 
-main {
+.app {
   height: 100%;
   width: 750px;
   max-width: 45vw;
@@ -21,6 +21,7 @@ main {
   flex-direction: column;
   justify-content: center;
 }
+
 
 .user-data {
   position: fixed;

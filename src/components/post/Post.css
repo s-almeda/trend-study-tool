@@ -1,0 +1,98 @@
+.post-header {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.post-username {
+  font-size: 1em;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 10px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.post {
+  width: 65%;
+  border-bottom: #e4e4e4 1px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2em 0em 2em 0em;
+  gap: 16px;
+  height: fit-content;
+}
+
+.post-image {
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  width: 100%;
+  border-radius: 10px;
+}
+.post-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.post-metadata {
+  color: #737373;
+  font-weight: 400;
+  font-size: 0.8em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  width: 100%;
+  height: 2em;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+.post-metadata svg {
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.post-time {
+  width: 60%;
+}
+
+
+.post-like,
+.post-reshare {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 20%;
+}
+
+.post-like {
+  fill: none;
+  stroke: #737373;
+  stroke-width: 8%;
+}
+
+.post-like:hover {
+  fill: #f66982;
+  stroke: #f66982;
+  cursor: pointer;
+  color: #f66982;
+}
+
+.post-reshare {
+  fill: #737373;
+}
+
+.post-reshare:hover {
+  fill: #4cc6a1;
+  cursor: pointer;
+  color: #4cc6a1;
+}

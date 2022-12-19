@@ -1,7 +1,26 @@
 //import logo from './logo.svg';
+import React, { useState } from "react";
 import './App.css';
+import Footer from "./components/footer/Footer";
+import Post from "./components/post/Post";
 
 function App() {
+  const [posts, setPosts] = useState([
+    {
+      username: "pradeep",
+      time: "2 minutes",
+      imageUrl: "https://placekitten.com/375/565", 
+      likes: 253, 
+      reshares: 30,
+    },
+    {
+      username: "ace",
+      time: "8 minutes",
+      imageUrl: "https://placekitten.com/375/562", 
+      likes: 666, 
+      reshares: 10,
+    } 
+    ])
   return (
     <div className="app">
       
@@ -60,6 +79,22 @@ function App() {
           accept="image/png, image/jpeg"
         />
       </div>
+
+    {/* Timeline that we dynamically fill with posts... */}
+      <div className="timeline">
+        {posts.map((post) => (
+          <Post
+            username={post.username}
+            time={post.time}
+            likes={post.likes}
+            reshares={post.reshares}
+            imageUrl={post.imageUrl}
+          />
+        ))}
+      </div>
+
+    {/* Manually created posts that I am leaving here because they look prettier than the dynamic ones
+    for some godforsaken reason (why is the post-image css not working hmmm) ... */}
       <div class="post mx-auto">
         <div class="post-users">
           <div class="post-username">tim</div>
@@ -104,6 +139,8 @@ function App() {
           </div>
         </div>
       </div>
+
+
       <div class="post mx-auto">
         <div class="post-users">
           <div class="post-username">shm</div>
@@ -149,7 +186,9 @@ function App() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
+
   );
 }
 

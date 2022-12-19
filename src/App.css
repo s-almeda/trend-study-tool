@@ -100,6 +100,7 @@ body {
   width: 2em;
 }
 
+/* the following is also copied over to Post.css... we can remove it from here when I'm sure I've done that properly. haha */
 .post-username {
   font-size: 1em;
   font-weight: 600;
@@ -189,6 +190,7 @@ body {
   cursor: pointer;
   color: #4cc6a1;
 }
+/*end of css that should be moved to Post.css*/
 
 footer {
   font-size: x-small;
@@ -226,6 +228,12 @@ footer {
     background-color: #fcfcfc;
     font-family: 'Inter', sans-serif;
   }
+
+  .timeline {
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 20px;
+}
 
   .user-data {
     position: relative;

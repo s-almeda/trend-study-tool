@@ -193,4 +193,36 @@ footer {
     background-color: #fcfcfc;
     font-family: 'Inter', sans-serif;
   }
+
+  .user-data {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    width: 65%;
+    min-width: none;
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-between;
+    padding: 2em 0em 2em 0em;
+    align-items: center;
+  }
+  .my-username {
+    font-size: 1.25em;
+  }
+
+  .create-btn {
+    width: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-data {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2em 0em 0em 0em;
+  }
+
+  .create-btn {
+    width: 175px;
+  }
 }

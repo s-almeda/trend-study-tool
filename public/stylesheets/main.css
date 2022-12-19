@@ -55,6 +55,12 @@ main {
   gap: 0.5em;
 }
 
+#upload-post {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
 .create-btn {
   margin: 0.5em 0 0.5em 0;
   width: 175px;
@@ -63,6 +69,8 @@ main {
   justify-content: space-between;
   align-items: center;
   background-color: #aeaeae;
+  cursor: pointer;
+  padding: 0 0.1em 0 0.1em;
 }
 
 .create-btn,
@@ -77,9 +85,11 @@ main {
 }
 
 .create-btn-label {
-  width: 90%;
+  width: 80%;
   padding-right: 10%;
   font-weight: 600;
+  display: flex;
+  justify-content: center;
   color: white;
 }
 

@@ -30,27 +30,18 @@ function App() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    db.collection("posts").onSnapshot((snapshot) => {
-      setPosts(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          post: doc.data(),
-        }))
-      );
-    });
+    db.collection("posts")
+      .orderBy("time", "desc")
+      .onSnapshot((snapshot) => {
+        // Everytime a new snapshot is noted (i.e. changes are made to posts in the database), this piece of code is fired
+        setPosts(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            post: doc.data(),
+          }))
+        );
+      });
   }, []);
-
-/*
-    db.collection("posts").onSnapshot((snapshot) => {
-      setPosts(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          post: doc.data(),
-        }))
-      );
-    });
-  }, []);
-*/
   return (
     <div className="app">
       
@@ -113,8 +104,9 @@ function App() {
     {/* Timeline that we dynamically fill with posts... */}
       <div className="timeline">
         {<ImageUpload user="placeholder123" />}
-        {posts.map((post) => (
+        {posts.map(({id, post}) => (
           <Post 
+            key={id}
             username={post.username}
             time={post.time}
             likes={post.likes}

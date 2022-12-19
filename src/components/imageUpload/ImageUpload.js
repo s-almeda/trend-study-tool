@@ -14,49 +14,57 @@ function ImageUpload({ user }) {
   const [progress, setProgress] = useState(0);
   // Handle image upload event and update state
   function handleChange (event) {
-    setImage(event.target.images[0]);
+    setImage(event.target.files[0]);
   }
 
   const handleUpload = () => {
     console.log("uploading...!")
     if (!image) {
-      alert("Please upload an image.");
+      alert("Please upload a valid image.");
     }
-    const storageRef = ref(storage, "/images/${image.name}");
-    // progress can be paused and resumed. It also exposes progress update
-    // Receives the storage reference and the image to upload.
-    const uploadTask = uploadBytesResumable(storageRef, image);
+
+    const uploadTask = storage.ref(`images/${image.name}`).put(image);
 
     uploadTask.on(
       "state_changed",
       (snapshot) => {
+        //update progress...
         const progress = Math.round(
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100
         );
-
-        // update progress
         setProgress(progress);
       },
 
-      (err) => console.log(err),
-      () => {
+      (err) => console.log(err), //error function..
+
+      () => { //complete function:
+        const fbtime = fb.firestore.Timestamp.now(); //get timestamp from firebase
+        //TODO: Make this timestring cute, so it says something like "4 minutes ago". this will probably require calling a separate function
+        const timestring = new Date(fbtime.seconds*1000).toLocaleDateString();
         // download url
-        getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-          console.log("uploaded:", url);
-          db.collection("posts").add({
-              time: fb.firestore.FieldValue.serverTimestamp(),
-              likes: likes, 
-              reshares: reshares,
-              imageUrl: url,
-              username: user,
-            });
-            setProgress(0);
-            setLikes("enter likes")
-            setReshares("reshares");
-            setTime("time");
-            setImage(null);
-        });
-      }
+        storage
+          .ref("images")
+          .child(image.name)
+          .getDownloadURL()
+          .then((url) => {
+          console.log("uploaded image to this url:", url);
+            db.collection("posts").add({
+                timestamp: fbtime,
+                time: timestring,
+                likes: likes, 
+                reshares: reshares,
+                imageUrl: url,
+                username: user,
+              });
+            //reset the form 
+
+              setProgress(0);
+              setLikes("enter likes")
+              setReshares("reshares");
+              setTime("time");
+              setImage("");
+             });
+        }
   );
 };
   

@@ -6,6 +6,7 @@ body {
   font-size: x-large;
   background-color: #fcfcfc;
   font-family: 'Inter', sans-serif;
+  font-weight: 400;
 }
 
 main {
@@ -19,6 +20,73 @@ main {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+}
+
+.user-data {
+  position: fixed;
+  right: 4em;
+  bottom: 5em;
+  width: 30vw;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.my-username {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.my-metadata {
+  color: #737373;
+}
+
+.my-metadata svg {
+  fill: #737373;
+  height: 1.25em;
+  width: 1.25em;
+}
+
+.my-likes,
+.my-reshares {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.create-btn {
+  margin: 0.5em 0 0.5em 0;
+  width: 175px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #aeaeae;
+}
+
+.create-btn,
+.create-btn:focus {
+  outline: none;
+  border: none;
+}
+
+.create-btn:focus,
+.create-btn:hover {
+  background-color: #737373;
+}
+
+.create-btn-label {
+  width: 90%;
+  padding-right: 10%;
+  font-weight: 600;
+  color: white;
+}
+
+.create-btn svg {
+  fill: white;
+  height: 2em;
+  width: 2em;
 }
 
 .post-username {

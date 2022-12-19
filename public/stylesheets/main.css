@@ -142,7 +142,6 @@ main {
 .post-metadata svg {
   height: 1.5em;
   width: 1.5em;
-  fill: #737373;
 }
 
 .post-time {
@@ -155,6 +154,29 @@ main {
   flex-direction: row;
   justify-content: space-evenly;
   width: 20%;
+}
+
+.post-like {
+  fill: none;
+  stroke: #737373;
+  stroke-width: 8%;
+}
+
+.post-like:hover {
+  fill: #f66982;
+  stroke: #f66982;
+  cursor: pointer;
+  color: #f66982;
+}
+
+.post-reshare {
+  fill: #737373;
+}
+
+.post-reshare:hover {
+  fill: #4cc6a1;
+  cursor: pointer;
+  color: #4cc6a1;
 }
 
 footer {

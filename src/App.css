@@ -21,6 +21,11 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+.timeline {
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 20px;
+}
 
 
 .user-data {
@@ -101,7 +106,7 @@ body {
 }
 
 /* the following is also copied over to Post.css... we can remove it from here when I'm sure I've done that properly. haha */
-.post-username {
+/*.post-username {
   font-size: 1em;
   font-weight: 600;
   display: flex;
@@ -190,7 +195,7 @@ body {
   cursor: pointer;
   color: #4cc6a1;
 }
-/*end of css that should be moved to Post.css*/
+/*end css that we copied over to Post.css*/
 
 footer {
   font-size: x-small;
@@ -200,6 +205,7 @@ footer {
   width: 30vw;
   text-align: end;
 }
+
 
 @media (max-width: 1200px) {
   main {
@@ -228,12 +234,6 @@ footer {
     background-color: #fcfcfc;
     font-family: 'Inter', sans-serif;
   }
-
-  .timeline {
-  margin: 0 auto;
-  max-width: 500px;
-  padding: 20px;
-}
 
   .user-data {
     position: relative;

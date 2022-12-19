@@ -18,7 +18,7 @@
 }
 
 .post {
-  width: 65%;
+  width: 400px;
   border-bottom: #e4e4e4 1px solid;
   display: flex;
   flex-direction: column;
@@ -96,3 +96,4 @@
   cursor: pointer;
   color: #4cc6a1;
 }
+

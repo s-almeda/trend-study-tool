@@ -93,8 +93,7 @@ function App() {
         ))}
       </div>
 
-    {/* Manually created posts that I am leaving here because they look prettier than the dynamic ones
-    for some godforsaken reason (why is the post-image css not working hmmm) ... */}
+    {/* Manually created posts that I am leaving here for now because they are pretty lol */}
       <div class="post mx-auto">
         <div class="post-users">
           <div class="post-username">tim</div>

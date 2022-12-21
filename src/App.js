@@ -1,5 +1,5 @@
 //import logo from './logo.svg';
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import './App.css';
 import Footer from "./components/footer/Footer";
 import Post from "./components/post/Post";
@@ -28,6 +28,16 @@ function App() {
   */
   /*load in post data from database*/
   const [posts, setPosts] = useState([]);
+  const [username, setUsername] = useState('timoteayang');
+  const [likeCount, setLikeCount] = useState(102);
+  const [reshareCount, setReshareCount] = useState(34);
+
+  const handleReset = () => {
+    const newUsername = prompt(('Set your username.'))
+    setUsername(newUsername)
+    setLikeCount(0)
+    setReshareCount(0)
+}
 
   useEffect(() => {
     db.collection("posts")
@@ -47,7 +57,7 @@ function App() {
       
       <div class="user-data">
         <div class="user-data-text">
-          <div class="my-username">timoteayang</div>
+          <div class="my-username">{username}</div>
           <div class="my-metadata">
             <div class="my-likes">
               <svg
@@ -61,7 +71,7 @@ function App() {
                   d="M24 42.7l-2.9-2.63c-10.3-9.35-17.1-15.52-17.1-23.07 0-6.17 4.83-11 11-11 3.48 0 6.82 1.62 9 4.17 2.18-2.55 5.52-4.17 9-4.17 6.17 0 11 4.83 11 11 0 7.55-6.8 13.72-17.1 23.07l-2.9 2.63z"
                 />
               </svg>
-              102 total likes
+              {likeCount} total likes
             </div>
             <div class="my-reshares">
               <svg
@@ -75,7 +85,7 @@ function App() {
                   d="M24 10V2L14 12l10 10v-8c6.63 0 12 5.37 12 12s-5.37 12-12 12-12-5.37-12-12H8c0 8.84 7.16 16 16 16s16-7.16 16-16-7.16-16-16-16z"
                 />
               </svg>
-              34 total reshares
+              {reshareCount} total reshares
             </div>
           </div>
         </div>
@@ -99,6 +109,7 @@ function App() {
           name="upload-post"
           accept="image/png, image/jpeg"
         />
+        <button onClick={handleReset}>Reset Study</button>
       </div>
 
     {/* Timeline that we dynamically fill with posts... */}

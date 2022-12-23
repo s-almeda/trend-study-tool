@@ -1,0 +1,42 @@
+.imageEditor {
+  width: 400px;
+  border-bottom: #e4e4e4 1px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2em 0em 2em 0em;
+  gap: 16px;
+  height: fit-content;
+}
+.image-editor-username {
+  font-size: 1em;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 10px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.imageEditor img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.image-editor-filename {
+  color: #737373;
+  font-weight: 400;
+  font-size: 0.8em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  width: 100%;
+  height: 2em;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}

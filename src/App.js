@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import './App.css';
 import Footer from "./components/footer/Footer";
 import Post from "./components/post/Post";
-import { db } from "./firebase/FirebaseInit"; //import Firebase database functionality
+import { db, doc, deleteDoc, collection, query, where } from "./firebase/FirebaseInit"; //import Firebase database functionality
 import ImageUpload from "./components/imageUpload/ImageUpload";
 import { onValue, ref } from "firebase/database";
 
@@ -31,12 +31,20 @@ function App() {
   const [username, setUsername] = useState('timoteayang');
   const [likeCount, setLikeCount] = useState(102);
   const [reshareCount, setReshareCount] = useState(34);
-
+  
   const handleReset = () => {
     const newUsername = prompt(('Set your username.'))
     setUsername(newUsername)
     setLikeCount(0)
     setReshareCount(0)
+    
+    //TODO: should replace this where with a better flag/field for placeholder posts
+    var placeholderPosts = db.collection('posts').where('username', '!=', 'placeholder123');
+    placeholderPosts.get().then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc){
+        doc.ref.delete();
+      });
+    });
 }
 
   useEffect(() => {
@@ -114,7 +122,7 @@ function App() {
 
     {/* Timeline that we dynamically fill with posts... */}
       <div className="timeline">
-        {<ImageUpload user="placeholder123" />}
+        {<ImageUpload user={username} />}
         {posts.map(({id, post}) => (
           <Post 
             key={id}

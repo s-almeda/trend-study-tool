@@ -102,10 +102,18 @@ function App() {
         />
       </div>
 
+      {
+        <ImageEditor
+          user='placeholder'
+          image={newImage}
+          setImage={setNewImage}
+        />
+      }
+
       {/* Timeline that we dynamically fill with posts... */}
       <div className='timeline'>
         {/* {<ImageUpload user='placeholder123' />} */}
-        {<ImageEditor user='placeholder' image={newImage} />}
+
         {posts.map(({ id, post }) => (
           <Post
             key={id}

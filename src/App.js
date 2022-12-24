@@ -106,7 +106,7 @@ function App() {
         <ImageEditor
           user='placeholder'
           image={newImage}
-          setImage={setNewImage}
+          closeEditor={() => setNewImage(null)}
         />
       }
 

@@ -3,11 +3,19 @@ import { useState, useEffect, useRef } from 'react';
 import { storage, db, fb } from '../../firebase/FirebaseInit.js';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 
+
 function ImageEditor({ user, image, closeEditor }) {
   const [hue, setHue] = useState(0);
   const [saturation, setSaturation] = useState(0);
   const [brightness, setBrightness] = useState(0);
   const [contrast, setContrast] = useState(0);
+  
+  // meta data
+  const [likes , setLikes] = useState("enter likes");
+  const [reshares , setReshares] = useState("reshares");
+
+  // progress bar
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     window.Caman('#newImage', function () {
@@ -43,6 +51,49 @@ function ImageEditor({ user, image, closeEditor }) {
     closeEditor();
   }
   function handleShare(event) {
+    console.log("uploading...!")
+    if (!image) {
+      alert("Please upload a valid image.");
+    }
+    
+    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        //update progress...
+        const progress = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        setProgress(progress);
+      },
+
+      (err) => console.log(err), //error function..
+
+      () => { //complete function:
+        const fbtime = fb.firestore.Timestamp.now(); //get timestamp from firebase
+        //TODO: Make this timestring cute, so it says something like "4 minutes ago". this will probably require calling a separate function
+        const timestring = new Date(fbtime.seconds*1000).toLocaleDateString();
+        // add to storage so we have a URL...
+        storage
+          .ref("images")
+          .child(image.name)
+          .getDownloadURL()
+          .then((url) => {
+          console.log("uploaded image to this url:", url);
+          //add to database...
+          db.collection("posts").add({
+                timestamp: fbtime,
+                time: timestring,
+                likes: likes, 
+                reshares: reshares,
+                imageUrl: url,
+                username: user,
+              });
+      setProgress(0);
+      setLikes("enter likes")
+      setReshares("reshares");
+
     closeEditor();
   }
   if (image) {
@@ -110,6 +161,13 @@ function ImageEditor({ user, image, closeEditor }) {
             <div className='image-editor-filters'>
               <div className='image-editor-title'>Filter</div>
             </div>
+
+           <input placeholder="Enter likes" value={likes} 
+           onChange={(e) => setLikes(e.target.value)}/>
+           <input placeholder="Enter reshares" value={reshares} 
+            onChange={(e) => setReshares(e.target.value)}/>
+           <progress className="progress" value={progress} max="100" />
+
             <div className='image-editor-btns'>
               <button
                 className='image-editor-cancel-btn'
@@ -117,7 +175,7 @@ function ImageEditor({ user, image, closeEditor }) {
               >
                 Cancel
               </button>
-              <button className='image-editor-share-btn'>Share post</button>
+              <button className='image-editor-share-btn' onClick={handleUpload}>Share post</button>
             </div>
           </div>
         </div>

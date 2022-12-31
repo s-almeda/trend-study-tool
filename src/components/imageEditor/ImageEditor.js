@@ -79,23 +79,28 @@ function ImageEditor({ user, image, closeEditor }) {
           .ref("images")
           .child(image.name)
           .getDownloadURL()
-          .then((url) => {
-          console.log("uploaded image to this url:", url);
-          //add to database...
-          db.collection("posts").add({
-                timestamp: fbtime,
-                time: timestring,
-                likes: likes, 
-                reshares: reshares,
-                imageUrl: url,
-                username: user,
-              });
-      setProgress(0);
-      setLikes("enter likes")
-      setReshares("reshares");
+          .then((url) => { //once you get the URL...
+            console.log("uploaded image to this url:", url);
+            //add this image to the database...
+            db.collection("posts").add({
+                  timestamp: fbtime,
+                  time: timestring,
+                  likes: likes, 
+                  reshares: reshares,
+                  imageUrl: url,
+                  username: user,
+                });
+            setProgress(0);
+            setLikes("enter likes")
+            setReshares("reshares");
+            closeEditor();
+            });
+      }
+  );//end of uploadTask
 
-    closeEditor();
-  }
+
+}; //end of handleShare function
+
   if (image) {
     return (
       <div>
@@ -175,7 +180,7 @@ function ImageEditor({ user, image, closeEditor }) {
               >
                 Cancel
               </button>
-              <button className='image-editor-share-btn' onClick={handleUpload}>Share post</button>
+              <button className='image-editor-share-btn' onClick={handleShare}>Share post</button>
             </div>
           </div>
         </div>

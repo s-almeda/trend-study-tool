@@ -25,14 +25,14 @@ body {
   margin: 0 auto;
   max-width: 500px;
   padding: 20px;
+  position: relative;
 }
-
 
 .user-data {
   position: fixed;
   right: 4em;
   bottom: 5em;
-  width: 30vw;
+  width: 20vw;
   min-width: 300px;
   display: flex;
   flex-direction: column;
@@ -205,7 +205,6 @@ footer {
   width: 30vw;
   text-align: end;
 }
-
 
 @media (max-width: 1200px) {
   main {

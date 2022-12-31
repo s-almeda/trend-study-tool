@@ -29,6 +29,7 @@ function App() {
     ]);
   */
   /*load in post data from database*/
+  const [newImage, setNewImage] = useState();
   const [posts, setPosts] = useState([]);
   const [username, setUsername] = useState('timoteayang');
   const [likeCount, setLikeCount] = useState(102);

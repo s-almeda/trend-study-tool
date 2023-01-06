@@ -24,6 +24,8 @@ function ImageUpload({ user }) {
     }
 
     const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    setLikes(Math.floor(Math.random() * 2000).toString());
+    setReshares(Math.floor(Math.random() * 500).toString());
 
     uploadTask.on(
       "state_changed",

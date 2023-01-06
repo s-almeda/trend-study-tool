@@ -6,17 +6,17 @@ function Post({username, time, imageUrl, likes, reshares}) {
     <div className="post mx-auto">
       {/* Header with username */}
       <div className="post__header">
-        <div class="post-username">{username}</div>
+        <div className="post-username">{username}</div>
       </div>
       {/* Image */}
       <img className="post-image" src={imageUrl} alt="" />
 
       {/* metadata */}
-      <div class="post-metadata">
-        <div class="post-time">{time}</div>      
+      <div className="post-metadata">
+        <div className="post-time">{time}</div>      
         {/*like button*/} 
-        <div class="post-like">
-              <div class="post-like-btn">
+        <div className="post-like">
+              <div className="post-like-btn">
                 <svg
                   height="48"
                   viewBox="0 0 48 48"
@@ -28,11 +28,11 @@ function Post({username, time, imageUrl, likes, reshares}) {
                   />
                 </svg>
               </div>
-              <div class="post-like-count">{likes}</div>
+              <div className="post-like-count">{likes}</div>
         </div>
         {/*reshare button*/} 
-        <div class="post-reshare">
-          <div class="post-reshare-btn">
+        <div className="post-reshare">
+          <div className="post-reshare-btn">
             <svg
               height="48"
               viewBox="0 0 48 48"
@@ -44,7 +44,7 @@ function Post({username, time, imageUrl, likes, reshares}) {
               />
             </svg>
           </div>
-          <div class="post-reshare-count">{reshares}</div>
+          <div className="post-reshare-count">{reshares}</div>
         </div>
       </div>
     {/*end of metadata*/}

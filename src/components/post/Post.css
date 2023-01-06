@@ -87,6 +87,12 @@
   color: #f66982;
 }
 
+.post-like-filled{
+  fill: #f66982;
+  stroke: #f66982;
+  color: #f66982;
+}
+
 .post-reshare {
   fill: #737373;
 }
@@ -97,3 +103,7 @@
   color: #4cc6a1;
 }
 
+.post-reshared-filled{
+  fill: #4cc6a1;
+  color: #4cc6a1;
+}

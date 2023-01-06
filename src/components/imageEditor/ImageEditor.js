@@ -4,7 +4,7 @@ import { storage, db, fb } from '../../firebase/FirebaseInit.js';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 
 
-function ImageEditor({ user, image, closeEditor }) {
+function ImageEditor({ user, image, closeEditor, likeCount, setLikeCount, reshareCount, setReshareCount}) {
   const [hue, setHue] = useState(0);
   const [saturation, setSaturation] = useState(0);
   const [brightness, setBrightness] = useState(0);
@@ -50,6 +50,7 @@ function ImageEditor({ user, image, closeEditor }) {
   function handleCancel(event) {
     closeEditor();
   }
+
   function handleShare(event) {
     console.log("uploading...!")
     if (!image) {
@@ -57,6 +58,8 @@ function ImageEditor({ user, image, closeEditor }) {
     }
     
     const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    setLikeCount(parseInt(likeCount) + parseInt(likes));
+    setReshareCount(parseInt(reshareCount) + parseInt(reshares));
 
     uploadTask.on(
       "state_changed",
@@ -124,7 +127,7 @@ function ImageEditor({ user, image, closeEditor }) {
                   value={hue}
                   onChange={changeHue}
                 />
-                <label for='hue'>Hue {hue}</label>
+                <label htmlFor='hue'>Hue {hue}</label>
               </div>
               <div>
                 <input
@@ -136,7 +139,7 @@ function ImageEditor({ user, image, closeEditor }) {
                   value={saturation}
                   onChange={changeSaturation}
                 />
-                <label for='saturation'>Saturation {saturation}</label>
+                <label htmlFor='saturation'>Saturation {saturation}</label>
               </div>
               <div>
                 <input
@@ -148,7 +151,7 @@ function ImageEditor({ user, image, closeEditor }) {
                   value={brightness}
                   onChange={changeBrightness}
                 />
-                <label for='brightness'>Brightness</label>
+                <label htmlFor='brightness'>Brightness</label>
               </div>
               <div>
                 <input
@@ -160,7 +163,7 @@ function ImageEditor({ user, image, closeEditor }) {
                   value={contrast}
                   onChange={changeContrast}
                 />
-                <label for='contrast'>Contrast</label>
+                <label htmlFor='contrast'>Contrast</label>
               </div>
             </div>
             <div className='image-editor-filters'>
